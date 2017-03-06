@@ -21,19 +21,20 @@
           <div class="panel panel-default">
               <div class="panel-heading"> Login </div>
               <div class="panel-body">
-                <form>
+                <form name="register">
                   <div class="input-group">
                   <label> EmailAdress </label>
                     <input type="text" class="form-control">
                   </div>
                   <div class="input-group">
                   <label> Password </label>
-                    <input type="password" class="form-control">
+                    <input type="password" class="form-control"  name="pwd"ng-model="pwd">
                   </div>
                   <div class="input-group">
                   <label> ConfirmPassword </label>
-                    <input type="password" class="form-control">
+                    <input type="password" class="form-control" name="pwdConfirm" compare-to="pwd" ng-model="pwdConfirm">
                   </div>
+                  <span ng-show="register.pwdConfirm.$dirty && register.pwdConfirm.$invalid">passwords do not match </span>
                   <button type="submit" class="btn btn-default">Submit </button>
                 </form>
               </div>
